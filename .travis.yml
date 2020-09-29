@@ -1,10 +1,19 @@
 language: node_js
+
 node_js:
   - 12.18.3
 cache: npm
 
 install:
   - npm ci
+
 script:
   - npm test
   - npm run build 
+
+notifications:
+ email:
+   - ppenmet@ncsu.edu
+   - sadhika2@ncsu.edu
+   - sray9@ncsu.edu
+   - nshukla2@ncsu.edu
