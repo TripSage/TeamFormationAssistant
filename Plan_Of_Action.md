@@ -23,27 +23,34 @@ We quickly discovered that the back-end for the project simply does not exist an
 The database used is AWS RDS, which might be hindrance to the Zero-boundary policy.
 
 ### List of Actions Based on Priority
-    1.  Setup Flask Environment.
-    2.  Integrate Front-End[React] with Back-End[Flask].
-    3.  Setup Local Database using SQL rather than Aws. [Cost-Effective and Zero-boundary]
-    4.  Implement the Signup Functionality. [Backend Implementation and Database connections]
-    5.  Implement Validation checks on Signup/Project Details Form.
-    6.  Implement the assignment algorithm, so as to allocate people to teams in Real time.
-    7.  Convert Current Assignment Algorithm [Greedy Approach] to Clustering approach.
-    8.  Implement project pipeline including deployment steps.
-    9.  Add Unit tests to the testing suite.
-    10. Tests are not executed in the Travis.
-    11. Publish the Codebase to a downloadable package manager.
+    1.  Refactor Code Base.
+    2.  Setup Flask Environment.
+    3.  Integrate Front-End[React] with Back-End[Flask].
+    4.  Create Advertisement for project.
+    5.  Implement the assignment algorithm, so as to allocate people to teams in Real time.
+    6.  Convert Current Assignment Algorithm [Greedy Approach] to Clustering approach.
+    7.  Implement project pipeline including deployment steps.
+    8.  Add Unit tests to the testing suite.
+    9.  Provide better UI for validation failures on Signup/Project page.
+    10. Setup Local Database using SQL rather than Aws. [Cost-Effective and Zero-boundary]
+    11. Tests are not executed in the Travis.
+    12. Publish the Codebase to a downloadable package manager.
 
 ### Current Plan of Work [Task Allocations]:
-All Group members will be involved for Tasks 1-3. [Due to this tasks forming the core of the project and might result in confusions if not handled properly]
+Task 1 will be handled by Dhruvil and Sameer.
 
-Tasks 4-5 will be handled by Sameer, Sreemoyee and Poorvaja, who have some experience with Front-end from Project 1.
+All Group members will be involved for Tasks 2-3. [Due to this tasks forming the core of the project and might result in confusions if not handled properly]
 
-Tasks 6-7 will be handled by Neeraj, who is well versed with Algorithms and their optimizations.
+Tasks 4 will be handled by Poorvaja along with other team members.
 
-Tasks 8 will be handled by Sameer.
+Tasks 5-6 will be handled by Neeraj and Poorvaja, who is well versed with Algorithms and their optimizations.
 
-Task 9 will be handled in phases: Since any new code implementation will already have test cases. The test cases for pre-existing code will be handled by all group members.
+Tasks 7 will be handled by Sameer and Sreemoyee.
 
-Tasks 10-11 will be handled by Dhruvil.
+Task 8 will be handled in phases: Since any new code implementation will already have test cases. The test cases for pre-existing code will be handled by all group members.
+
+Task 9, 10 is optional and will be done by any available team member.
+
+Tasks 11 will be handled by Dhruvil.
+
+Task 12 will be determine by unanimous decision and handled by Dhruvil.
