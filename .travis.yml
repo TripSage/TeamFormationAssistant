@@ -4,11 +4,13 @@ node_js:
   - 14.10.0
 cache: npm
 
+before_install:
+  - cd Front-End
+
 install:
   - npm ci
 
 script:
-  - cd Front-End
   - npm test
   - npm run build 
 
