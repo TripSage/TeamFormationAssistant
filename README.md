@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lokesh45/TeamFormationAssistant.svg?branch=master)](https://travis-ci.org/lokesh45/TeamFormationAssistant)
+[![Build Status](https://travis-ci.com/TripSage/TeamFormationAssistant.svg?branch=master)](https://travis-ci.com/TripSage/TeamFormationAssistant)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8475.svg)](https://doi.org/10.5281/zenodo.8475)
 # Team Formation Assistant
 ## Problem Statement              
@@ -33,8 +33,8 @@ implement the dashboard and form using HTML, CSS, JavaScript
 ### [Wiki](https://github.com/TripSage/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
-![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
-![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
-![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss3.jpeg)
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/ss1.jpeg)<br>
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/ss2.jpeg)<br>
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/ss3.jpeg)
 
 
