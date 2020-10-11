@@ -15,7 +15,7 @@ data.<br/>
 members availability, skill level, tools preferred, etc. as input and assigns
 the members for the new team.<br/>
 ## Video link
-[![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
+[![Team Formation Assistant](https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
 ## How we plan to carry out the project
 ### Algorithm Implementation
 We plan to code the application in Python3. Python ML libraries will be used for
@@ -30,11 +30,11 @@ Final team assignment will posted on the homepage dashboard. We plan to
 implement the dashboard and form using HTML, CSS, JavaScript
 
 ##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model, 
-### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
+### [Wiki](https://github.com/TripSage/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss3.jpeg)
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
+![](https://github.com/TripSage/TeamFormationAssistant/blob/master/ss3.jpeg)
 
 
