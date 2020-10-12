@@ -16,7 +16,7 @@ class Home extends Component {
 componentDidMount() {
   //fetch('http://localhost:5000/executeAlgo');
   console.log("Inside Home");
-  const apiUrl = 'http://localhost:3001/getResults';
+  const apiUrl = 'http://localhost:5000/getResults';
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => this.setState({data: data}));
