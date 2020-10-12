@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import './static/Signup.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 
 class Signup extends Component {
@@ -189,6 +191,6 @@ class Signup extends Component {
 }
 
 const Notify = ({ isShow }) =>
-  isShow ? <p><h4 align="center" className = "h4seg">Form Received. Please visit Home Page after some time to view Project assignment.</h4></p> : null;
+  isShow ? <h4 align="center" className = "h4seg">Form Received. Please visit Home Page after some time to view Project assignment.</h4> : null;
 
 export default Signup;
