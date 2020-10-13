@@ -43,9 +43,7 @@ class App extends Component {
           Important: A route with path="/" will *always* match
           the URL because all URLs begin with a /. So that's
           why we put this one last of all */}
-      <Route path="/TeamFormationAssistant">
-        <Home />
-      </Route>
+      <Route path="/TeamFormationAssistant/Home" component={Home}/>
     </Switch>
   </div>
   );

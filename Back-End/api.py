@@ -1,40 +1,41 @@
 import time
-from flask import Flask, redirect
+from flask import Flask, redirect, jsonify
 from flask import request
 import mysql.connector as mysql
-import pandas as pd
 from flask_cors import CORS, cross_origin
-
-
+import json
 
 app = Flask(__name__)
 cors = CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'
 
 connection = mysql.connect(
-    host= "localhost", 
-    user= "root", 
-    password= "DatabasePass@54", 
-    database= "teamformationassistant",
+    host="localhost",
+    user="root",
+    password="DatabasePass@54",
+    database="teamformationassistant",
     auth_plugin='mysql_native_password'
 )
+
 
 @app.route('/executeAlgo')
 def execute_algo():
     exec(open("algo.py").read())
-    #exec(open("algo.py").read())
+    # exec(open("algo.py").read())
     return {
         'msg': 'success',
     }
 
+
 @app.route('/getResults', methods=['GET'])
-def getresult():
-    if connection.is_connected():
-        Teams_Query = pd.read_sql_query('''select * from Team''', connection)
-    
-    json_data = Teams_Query.to_json() 
-    print(json_data)
-    return json_data
+def get_team_data():
+    cur = connection.cursor(buffered=True, dictionary=True)
+    query = 'select * from Team'
+    cur.execute(query)
+    data = cur.fetchall()
+    print(json.dumps(data))
+    return json.dumps(data)
+
 
 @app.route('/Signup', methods=['GET', 'POST'])
 def signup():
@@ -47,13 +48,16 @@ def signup():
     experience = str(request.form['experience'])
     skill_score = str(request.form['skillscore'])
     available_hours_per_week = str(request.form['availablehoursperweek'])
-    
+
     if connection.is_connected():
         cursor = connection.cursor()
-        sql =  "INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
-        cursor.execute(sql,(name,hourly_rate,dob,languages,is_assigned,member_role,experience,skill_score,available_hours_per_week))
+        sql = "INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
+        cursor.execute(sql, (
+            name, hourly_rate, dob, languages, is_assigned, member_role, experience, skill_score,
+            available_hours_per_week))
         connection.commit()
     return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success")
+
 
 @app.route('/ProjectDetails', methods=['GET', 'POST'])
 def projectDetails():
@@ -66,11 +70,11 @@ def projectDetails():
     is_assignment_complete = str(0)
     if connection.is_connected():
         cursor = connection.cursor()
-        sql =  "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
-        cursor.execute(sql,(name,end_date,team_size,budget,tools,priority,is_assignment_complete))
+        sql = "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
+        cursor.execute(sql, (name, end_date, team_size, budget, tools, priority, is_assignment_complete))
         connection.commit()
         i = 0
-       	
+
         for key in request.form.items():
             colname = 'languagepreferred' + str(i)
             if colname in request.form:
@@ -84,8 +88,10 @@ def projectDetails():
                 language_weight = int(request.form['languageweight'])
                 budget_weight = int(request.form['budgetweight'])
                 cursor = connection.cursor()
-                sql =  "CALL populateRequirements (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                cursor.execute(sql,(language_preferred, skill, member_role, available_hours_per_week, skill_weight, experience_weight, hours_weight, language_weight, budget_weight))
+                sql = "CALL populateRequirements (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                cursor.execute(sql, (
+                    language_preferred, skill, member_role, available_hours_per_week, skill_weight, experience_weight,
+                    hours_weight, language_weight, budget_weight))
                 connection.commit()
                 i += 1
 
@@ -93,5 +99,3 @@ def projectDetails():
                 break
 
     return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success");
-
-
