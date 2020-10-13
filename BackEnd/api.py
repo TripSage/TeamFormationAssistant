@@ -1,21 +1,12 @@
-import time
-from flask import Flask, redirect, jsonify
+from flask import Flask, redirect
 from flask import request
-import mysql.connector as mysql
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import json
+
+from BackEnd.connection import connection
 
 app = Flask(__name__)
 cors = CORS(app)
-# app.config['CORS_HEADERS'] = 'Content-Type'
-
-connection = mysql.connect(
-    host="localhost",
-    user="root",
-    password="DatabasePass@54",
-    database="teamformationassistant",
-    auth_plugin='mysql_native_password'
-)
 
 
 @app.route('/executeAlgo')
