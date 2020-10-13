@@ -5,7 +5,7 @@ node_js:
 cache: npm
 
 before_install:
-  - cd Front-End
+  - cd FrontEnd
 
 install:
   - npm ci
