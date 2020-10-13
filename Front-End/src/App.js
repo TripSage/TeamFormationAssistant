@@ -36,6 +36,7 @@ class App extends Component {
       <Route path="/TeamFormationAssistant/ProjectDetails">
         <ProjectDetails  formflag={false} />
       </Route>
+      <Route path="/TeamFormationAssistant/" component={Home}/>
 
       {/* If none of the previous routes render anything,
           this route acts as a fallback.
