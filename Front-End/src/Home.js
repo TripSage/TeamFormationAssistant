@@ -20,7 +20,7 @@ componentDidMount() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => this.setState({data: data}));
-  var newData = this.state.data.concat([this.state.data]);  
+  var newData = this.state.data.concat([this.state.data]);
   this.setState({data: newData})
     
 }
@@ -76,7 +76,9 @@ componentDidMount() {
                 </tr>
               </thead>
               <tbody>
-                {this.state.data.map(this.renderTeam)}
+                { Object.keys(this.state.data).map(key => {
+                    return <th>{ this.state.data[key].toString() }</th>
+                })}
               </tbody>
             </ReactBootstrap.Table>
         </div>
