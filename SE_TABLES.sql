@@ -12,7 +12,7 @@ CREATE TABLE Member(
 	Languages				VARCHAR(100) NOT NULL,
 	IsAssigned				INT,
 	HourlyRate				FLOAT,
-	MemberRole					VARCHAR(20),
+	MemberRole				VARCHAR(200),
 	Experience				INT,
 	SkillScore				INT,
 	AvailableHoursPerWeek	INT,
