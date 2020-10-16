@@ -64,7 +64,7 @@ class Signup extends Component {
       errors["dob"] = "*Please enter a valid date.";
     }
     
-    if (fields["skillscore"]<0 || fields["skillscore"]>100) {
+    if (Number(fields["skillscore"]) <= 0 || Number(fields["skillscore"]) > 100) {
       formIsValid = false;
       // this.state.fields["skillscore"]="";
       errors["skillscore"] = "*Please enter a valid score.";
@@ -141,7 +141,15 @@ class Signup extends Component {
               <div className="form-row">
                 <div className="form-group col-md-6">
                   <label htmlFor="languages" className="form-check-label">Programming Languages</label>
-                  <input type="text" className="form-control" name = 'languages' required />
+                  <select name="languages" className="form-control"  required>
+                    <option value="" disabled selected>choose</option>
+                    <option>Java</option>
+                    <option>Python</option>
+                    <option>C</option>
+                    <option>C++</option>
+                    <option>C#</option>
+                    <option>Other</option>
+                  </select>
                 </div>
                 <div className="form-group col-md-6">
                   <label htmlFor="hourlyrate" className="form-check-label">Hourly Rate (in dollars)</label>
@@ -153,7 +161,7 @@ class Signup extends Component {
                 <div className="form-group col-md-6">
                   <label htmlFor="memberrole" className="form-check-label">Role</label>
                   <select name="memberrole" className="form-control"  required>
-                    <option defaultValue>Choose</option>
+                    <option value="" disabled selected>choose</option>
                     <option>Frontend Software Engineer</option>
                     <option>Backend Software Engineer</option>
                     <option>Full Stack Software-Backend</option>
@@ -161,6 +169,7 @@ class Signup extends Component {
                     <option>Data Engineer</option>
                     <option>Project Manager</option>
                     <option>Project Lead</option>
+                    <option>Other</option>
                   </select>
                 </div>
                 <div className="form-group col-md-6">
