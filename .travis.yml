@@ -1,22 +1,43 @@
-language: node_js
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - 14.10.0
+      cache: npm
 
-node_js:
-  - 14.10.0
-cache: npm
+      before_install:
+        - cd FrontEnd
 
-before_install:
-  - cd FrontEnd
+      install:
+        - npm ci
 
-install:
-  - npm ci
+      script:
+        - npm test
+        - npm run build
 
-script:
-  - npm test
-  - npm run build 
+      after_success:
+        - echo "Finished FrontEnd Testing"
+
+
+    - language: python
+      python:
+        - 3.6
+
+      install:
+        - pip install -r requirements.txt
+
+      script:
+        - python test/Backend_test.py
+
+      before_install:
+        - cd Backend
+
+      after_success:
+        - echo "Finished BackEnd Testing"
 
 notifications:
- email:
-   - ppenmet@ncsu.edu
-   - sadhika2@ncsu.edu
-   - sray9@ncsu.edu
-   - nshukla2@ncsu.edu
+  email:
+    - ppenmet@ncsu.edu
+    - sadhika2@ncsu.edu
+    - sray9@ncsu.edu
+    - nshukla2@ncsu.edu
