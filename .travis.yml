@@ -27,10 +27,8 @@ matrix:
         - pip install -r requirements.txt
 
       script:
+        - cd BackEnd
         - python test/Backend_test.py
-
-      before_install:
-        - cd Backend
 
       after_success:
         - echo "Finished BackEnd Testing"
