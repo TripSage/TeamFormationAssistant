@@ -5,7 +5,7 @@ try:
     Connection = conn.connect(
         host="localhost",
         user="root",
-        password="####",
+        password="DatabasePass@54",
         database="teamformationassistant",
         auth_plugin='mysql_native_password'
     )
@@ -24,7 +24,7 @@ def connect():
         Connection = conn.connect(
             host="localhost",
             user="root",
-            password="####",
+            password="DatabasePass@54",
             database="teamformationassistant",
             auth_plugin='mysql_native_password'
         )
@@ -85,3 +85,4 @@ def create_project(data):
         query = "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
         cursor.execute(query, (name, end_date, team_size, budget, tools, priority, is_assignment_complete))
         Connection.commit()
+
