@@ -1,14 +1,15 @@
 # ToDo: Remove CORS Dependency
 # ToDo: Restructure ProjectDetails Function: High Complexity
 from __future__ import absolute_import
-from flask import Flask, redirect
+from flask import redirect
 from flask import request, jsonify
 from flask_cors import CORS
+
 from app import connection
 from app import app
 
 # app = Flask(__name__)
-# cors = CORS(app)
+cors = CORS(app)
 
 @app.route('/executeAlgo')
 def execute_algo():
@@ -20,6 +21,11 @@ def execute_algo():
 @app.route('/getResults', methods=['GET'])
 def get_team_data():
     data = connection.get_all_team_data()
+    return jsonify(data)
+
+@app.route('/getMembers', methods=['GET'])
+def get_member_data():
+    data = connection.get_all_member_data()
     return jsonify(data)
 
 @app.route('/Signup', methods=['GET', 'POST'])

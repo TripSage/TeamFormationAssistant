@@ -19,6 +19,7 @@ except:
     )
     print("Switching to AWS DataBase")
 
+
 def connect():
     try:
         Connection = conn.connect(
@@ -36,19 +37,33 @@ def connect():
             database="teamformationassistant"
         )
 
+
 def CheckConnection():
     if not Connection.is_connected():
         connect()
 
+
 def get_all_team_data():
-    '''Returns Team Assignment data for members who have already been assigned to a team'''
+    """Returns Team Assignment data for members who have already been assigned to a team"""
     # ToDo: Create Modified Query to show further data of each member by joining with member table
-    # ToDo: To overcome Privacy Concers, show only the data of team members
+    # ToDo: To overcome Privacy Concerns, show only the data of team members
     CheckConnection()
     with Connection.cursor(buffered=True, dictionary=True) as cursor:
         cursor.execute('select * from Team;')
         data = cursor.fetchall()
     return data
+
+
+def get_all_member_data():
+    """Returns Member details present in the DB"""
+    # ToDo: Create Modified Query to show further data of each member by joining with member table
+    # ToDo: To overcome Privacy Concerns, show only the data of team members
+    CheckConnection()
+    with Connection.cursor(buffered=True, dictionary=True) as cursor:
+        cursor.execute('select * from Member;')
+        data = cursor.fetchall()
+    return data
+
 
 def add_member(data):
     '''Adds the newly signed up user to the member Table'''
@@ -67,8 +82,9 @@ def add_member(data):
 
         query = "INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
         cursor.execute(query, (name, hourly_rate, dob, languages, is_assigned, member_role, experience, skill_score,
-            available_hours_per_week))
+                               available_hours_per_week))
         Connection.commit()
+
 
 def create_project(data):
     '''Adds new project details to project database'''
@@ -85,4 +101,3 @@ def create_project(data):
         query = "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
         cursor.execute(query, (name, end_date, team_size, budget, tools, priority, is_assignment_complete))
         Connection.commit()
-
