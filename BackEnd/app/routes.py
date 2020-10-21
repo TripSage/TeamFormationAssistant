@@ -31,8 +31,7 @@ def get_member_data():
 @app.route('/Signup', methods=['GET', 'POST'])
 def signup():
     data = request.form
-    connection.add_member(data)
-    return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success")
+    return connection.add_member(data)
 
 
 @app.route('/ProjectDetails', methods=['GET', 'POST'])

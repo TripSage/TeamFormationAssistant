@@ -10,13 +10,24 @@ from app import app
 
 TEST_DATA = {
     "name": "XYZ",
-    "hourlyrate": 40.0,
-    "dob": "Sat, 03 Oct 1998 00:00:00 GMT",
+    "hourlyrate": "40",
+    "dob": "1995-10-21",
     "languages": "JAVA",
     "memberrole": "Frontend Software Engineer",
-    "experience": 2,
-    "skillscore": 70,
-    "availablehoursperweek": 40
+    "experience": "2",
+    "skillscore": "70",
+    "availablehoursperweek": "40"
+}
+
+WRONG_DATA = {
+    "name": "XYZ",
+    "hourlyrate": "40",
+    "dob": "1995-100-21",
+    "languages": "JAVA",
+    "memberrole": "Frontend Software Engineer",
+    "experience": "2",
+    "skillscore": "70",
+    "availablehoursperweek": "40"
 }
 
 '''Define all test cases as test_TEST_NAME'''
@@ -36,11 +47,17 @@ class Api(unittest.TestCase):
         self.assertIsNotNone(data[0]['ProjectId'])
         self.assertNotEqual(len(data[0]['ProjectName']), 0)
 
-    def test_member_signup(self):
-        response = self.app.post('http://localhost:5000/Signup/', data=json.dumps(TEST_DATA, indent=4))
-        print(response.get_data())
-        self.assertEqual(response.status_code, 201)
+    def test_member_signup_success(self):
+        response = self.app.post('/Signup', data=TEST_DATA)
+        data = json.loads(response.get_data())
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data, True)
 
+    def test_member_signup_fails(self):
+        response = self.app.post('/Signup', data=WRONG_DATA)
+        data = json.loads(response.get_data())
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data, False)
 
 if __name__ == '__main__':
     unittest.main()
