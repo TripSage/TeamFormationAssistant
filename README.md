@@ -1,6 +1,12 @@
 [![Build Status](https://travis-ci.com/TripSage/TeamFormationAssistant.svg?branch=master)](https://travis-ci.com/TripSage/TeamFormationAssistant)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8475.svg)](https://doi.org/10.5281/zenodo.8475)
 # Team Formation Assistant
+
+[<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
+</br>
+</br>
+</br>
+
 ## Problem Statement              
 Build an assistant which will take the project requirements, team members
 availability, skill level, tools preferred, etc. as input and assigns the members for
