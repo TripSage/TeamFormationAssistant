@@ -1,13 +1,14 @@
 # ToDo: Remove CORS Dependency
 # ToDo: Restructure ProjectDetails Function: High Complexity
-
-from flask import Flask, redirect
+from __future__ import absolute_import
+from flask import redirect
 from flask import request, jsonify
 from flask_cors import CORS
 
-import BackEnd.connection as connection
+from app import connection
+from app import app
 
-app = Flask(__name__)
+# app = Flask(__name__)
 cors = CORS(app)
 
 @app.route('/executeAlgo')
@@ -22,11 +23,15 @@ def get_team_data():
     data = connection.get_all_team_data()
     return jsonify(data)
 
+@app.route('/getMembers', methods=['GET'])
+def get_member_data():
+    data = connection.get_all_member_data()
+    return jsonify(data)
+
 @app.route('/Signup', methods=['GET', 'POST'])
 def signup():
     data = request.form
-    connection.add_member(data)
-    return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success")
+    return connection.add_member(data)
 
 
 @app.route('/ProjectDetails', methods=['GET', 'POST'])

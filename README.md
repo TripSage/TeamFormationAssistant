@@ -21,7 +21,7 @@ data.<br/>
 members availability, skill level, tools preferred, etc. as input and assigns
 the members for the new team.<br/>
 ## Video link
-[![Team Formation Assistant](https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
+[![Team Formation Assistant]<iframe width="560" height="315" src="https://www.youtube.com/embed/jtYDAEjDmlM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ## How we plan to carry out the project
 ### Algorithm Implementation
 We plan to code the application in Python3. Python ML libraries will be used for

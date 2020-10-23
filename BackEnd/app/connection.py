@@ -5,7 +5,7 @@ try:
     Connection = conn.connect(
         host="localhost",
         user="root",
-        password="####",
+        password="DatabasePass@54",
         database="teamformationassistant",
         auth_plugin='mysql_native_password'
     )
@@ -19,12 +19,13 @@ except:
     )
     print("Switching to AWS DataBase")
 
+
 def connect():
     try:
         Connection = conn.connect(
             host="localhost",
             user="root",
-            password="####",
+            password="DatabasePass@54",
             database="teamformationassistant",
             auth_plugin='mysql_native_password'
         )
@@ -36,39 +37,62 @@ def connect():
             database="teamformationassistant"
         )
 
+
 def CheckConnection():
     if not Connection.is_connected():
         connect()
 
+
 def get_all_team_data():
-    '''Returns Team Assignment data for members who have already been assigned to a team'''
+    """Returns Team Assignment data for members who have already been assigned to a team"""
     # ToDo: Create Modified Query to show further data of each member by joining with member table
-    # ToDo: To overcome Privacy Concers, show only the data of team members
+    # ToDo: To overcome Privacy Concerns, show only the data of team members
     CheckConnection()
     with Connection.cursor(buffered=True, dictionary=True) as cursor:
         cursor.execute('select * from Team;')
         data = cursor.fetchall()
     return data
 
+
+def get_all_member_data():
+    """Returns Member details present in the DB"""
+    # ToDo: Create Modified Query to show further data of each member by joining with member table
+    # ToDo: To overcome Privacy Concerns, show only the data of team members
+    CheckConnection()
+    with Connection.cursor(buffered=True, dictionary=True) as cursor:
+        cursor.execute('select * from Member;')
+        data = cursor.fetchall()
+    return data
+
+
 def add_member(data):
     '''Adds the newly signed up user to the member Table'''
     # ToDo: Get Project Details from user during signup. Current system assumes user has no project preference.
-    CheckConnection()
-    with Connection.cursor() as cursor:
-        name = str(data['name'])
-        hourly_rate = str(data['hourlyrate'])
-        dob = str(data['dob'])
-        languages = str(data['languages'])
-        is_assigned = str(0)
-        member_role = str(data['memberrole'])
-        experience = str(data['experience'])
-        skill_score = str(data['skillscore'])
-        available_hours_per_week = str(data['availablehoursperweek'])
 
-        query = "INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
-        cursor.execute(query, (name, hourly_rate, dob, languages, is_assigned, member_role, experience, skill_score,
-            available_hours_per_week))
-        Connection.commit()
+    try:
+        CheckConnection()
+        with Connection.cursor() as cursor:
+            name = str(data['name'])
+            hourly_rate = str(data['hourlyrate'])
+            dob = str(data['dob'])
+            languages = str(data['languages'])
+            is_assigned = str(0)
+            member_role = str(data['memberrole'])
+            experience = str(data['experience'])
+            skill_score = str(data['skillscore'])
+            available_hours_per_week = str(data['availablehoursperweek'])
+
+            query = "INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
+            cursor.execute(query, (name, hourly_rate, dob, languages, is_assigned, member_role, experience, skill_score,
+                                available_hours_per_week))
+            Connection.commit()
+            return "true"
+
+    except conn.Error as error :
+        print("Failed to update record to database rollback: {}".format(error))
+        Connection.rollback()
+        return "false"
+
 
 def create_project(data):
     '''Adds new project details to project database'''
