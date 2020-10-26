@@ -15,7 +15,7 @@ TEST_DATA = {
     "hourlyrate": "40",
     "dob": "1995-10-21",
     "languages": "JAVA",
-    "memberrole": "Frontend Software Engineer",
+    "memberrole": "DevOps Engineer",
     "experience": "2",
     "skillscore": "70",
     "availablehoursperweek": "40"
@@ -26,7 +26,7 @@ WRONG_DATA = {
     "hourlyrate": "40",
     "dob": "1995-100-21",
     "languages": "JAVA",
-    "memberrole": "Frontend Software Engineer",
+    "memberrole": "DevOps Engineer",
     "experience": "2",
     "skillscore": "70",
     "availablehoursperweek": "40"
