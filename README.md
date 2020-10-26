@@ -2,6 +2,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4135147.svg)](https://doi.org/10.5281/zenodo.4135147)
 [![Coverage Status](https://coveralls.io/repos/github/TripSage/TeamFormationAssistant/badge.svg?branch=master)](https://coveralls.io/github/TripSage/TeamFormationAssistant?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/12e167617376b4d23a0a/maintainability)](https://codeclimate.com/github/TripSage/TeamFormationAssistant/maintainability)
+[GitHub issues](https://img.shields.io/github/issues-raw/TripSage/TeamFormationAssistant)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/TripSage/TeamFormationAssistant)
 # Team Formation Assistant
 ## Video
 [<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
