@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/TripSage/TeamFormationAssistant.svg?branch=master)](https://travis-ci.com/TripSage/TeamFormationAssistant)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8475.svg)](https://doi.org/10.5281/zenodo.8475)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4135147.svg)](https://doi.org/10.5281/zenodo.4135147)
+[![Coverage Status](https://coveralls.io/repos/github/TripSage/TeamFormationAssistant/badge.svg?branch=master)](https://coveralls.io/github/TripSage/TeamFormationAssistant?branch=master)
 # Team Formation Assistant
 
 [<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
