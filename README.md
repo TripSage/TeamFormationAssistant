@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/TripSage/TeamFormationAssistant/badge.svg?branch=master)](https://coveralls.io/github/TripSage/TeamFormationAssistant?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/12e167617376b4d23a0a/maintainability)](https://codeclimate.com/github/TripSage/TeamFormationAssistant/maintainability)
 # Team Formation Assistant
-
+## Video
 [<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
 </br>
 </br>
@@ -22,8 +22,7 @@ data.<br/>
 ➢ Write an algorithm which will take the project requirements, team
 members availability, skill level, tools preferred, etc. as input and assigns
 the members for the new team.<br/>
-## Video link
-[![Team Formation Assistant]<iframe width="560" height="315" src="https://www.youtube.com/embed/jtYDAEjDmlM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## How we plan to carry out the project
 ### Algorithm Implementation
 We plan to code the application in Python3. Python ML libraries will be used for
