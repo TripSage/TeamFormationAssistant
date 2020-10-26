@@ -24,10 +24,17 @@ matrix:
 
       install:
         - pip install -r requirements.txt
+        - pip install pytest pytest-cov
+        - pip install coveralls
+        - pip install coverage
+        - pip install codecov
 
       script:
         - cd BackEnd
         - python tests/test_api.py
+        - cd ..
+        - coverage run --source=BackEnd -m pytest BackEnd/tests/
+        - coveralls
 
       after_success:
         - echo "Finished BackEnd Testing"
