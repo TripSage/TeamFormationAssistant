@@ -27,9 +27,9 @@ matrix:
         - pip install -r requirements.txt
 
       script:
-        - pwd
         - cd BackEnd
-        - python test/test_api.py
+        - pwd
+        - python tests/test_api.py
 
       after_success:
         - echo "Finished BackEnd Testing"
