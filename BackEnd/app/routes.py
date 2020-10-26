@@ -13,7 +13,7 @@ cors = CORS(app)
 
 @app.route('/executeAlgo')
 def execute_algo():
-    exec(open("algo.py").read())
+    exec(open("TeamAssigner.py").read())
     return {
         'msg': 'success',
     }
