@@ -86,26 +86,66 @@ def add_member(data):
             cursor.execute(query, (name, hourly_rate, dob, languages, is_assigned, member_role, experience, skill_score,
                                 available_hours_per_week))
             Connection.commit()
-            return "true"
+            return True
 
     except conn.Error as error :
         print("Failed to update record to database rollback: {}".format(error))
         Connection.rollback()
-        return "false"
+        return False
 
 
 def create_project(data):
     '''Adds new project details to project database'''
-    CheckConnection()
-    with Connection.cursor() as cursor:
-        name = str(data['name'])
-        end_date = str(data['enddate'])
-        team_size = str(data['teamsize'])
-        budget = str(data['budget'])
-        tools = str(data['tools'])
-        priority = str(data['priority'])
-        is_assignment_complete = str(0)
+    try:
+        CheckConnection()
+        with Connection.cursor() as cursor:
+            name = str(data['name'])
+            end_date = str(data['enddate'])
+            team_size = str(data['teamsize'])
+            budget = str(data['budget'])
+            tools = str(data['tools'])
+            priority = str(data['priority'])
+            is_assignment_complete = str(0)
 
-        query = "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
-        cursor.execute(query, (name, end_date, team_size, budget, tools, priority, is_assignment_complete))
-        Connection.commit()
+            query = "INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES (%s,%s,%s,%s,%s,%s,%s);"
+            cursor.execute(query, (name, end_date, team_size, budget, tools, priority, is_assignment_complete))
+            Connection.commit()
+        return True
+    
+    except conn.Error as error :
+        print("Failed to update record to database rollback: {}".format(error))
+        Connection.rollback()
+        return False
+
+def save_project_requirements(data):
+    try:
+        CheckConnection()
+        with Connection.cursor() as cursor:
+            i = 0 
+            for key in data.items():
+                colname = 'languagepreferred' + str(i)
+                if colname in data:
+                    language_preferred = str(data[colname])
+                    skill = str(data['skill' + str(i)])
+                    member_role = str(data['memberrole' + str(i)])
+                    available_hours_per_week = int(data['availablehoursperweek' + str(i)])
+                    skill_weight = int(data['skillweight'])
+                    experience_weight = int(data['experienceweight'])
+                    hours_weight = int(data['hoursweight'])
+                    language_weight = int(data['languageweight'])
+                    budget_weight = int(data['budgetweight'])
+                
+                    sql = "CALL populateRequirements (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                    cursor.execute(sql, (
+                        language_preferred, skill, member_role, available_hours_per_week, skill_weight, experience_weight,
+                        hours_weight, language_weight, budget_weight))
+                    Connection.commit()
+                    i += 1
+                else:
+                    break
+        return True
+
+    except conn.Error as error :
+        print("Failed to update record to database rollback: {}".format(error))
+        Connection.rollback()
+        return False
