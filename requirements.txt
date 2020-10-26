@@ -2,8 +2,8 @@ pytest
 
 mysql-connector-python==8.0.21
 
-numpy
-pandas
+numpy==1.19.2
+pandas==1.1.2
 
 protobuf==3.13.0
 python-dateutil==2.8.1
