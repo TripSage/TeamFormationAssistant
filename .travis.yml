@@ -28,7 +28,7 @@ matrix:
 
       script:
         - cd BackEnd
-        - python test/test_api.py.py
+        - python test/test_api.py
 
       after_success:
         - echo "Finished BackEnd Testing"
