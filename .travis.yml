@@ -27,8 +27,8 @@ matrix:
         - pip install pytest pytest-cov
 
       script:
-        - cd BackEnd
         - pytest --pylint
+        - cd BackEnd
         - python tests/test_api.py
         - cd ..
         - coverage run --source=BackEnd -m pytest BackEnd/tests/
