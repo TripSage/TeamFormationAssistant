@@ -7,17 +7,17 @@
 # Team Formation Assistant
 
 ## Table Of Contents
-[Video](#Video)
+1. [Video](#Video)
 
-[Why?](#Problem-Statement)
+2. [Why?](#Problem-Statement)
 
-[What?](#Project-Objectives)
+3. [What?](#Project-Objectives)
 
-[Why?](#Project-Structure)
+4. [How?](#Project-Structure)
 
-[Documentation](https://github.com/TripSage/TeamFormationAssistant/wiki)
+5. [Documentation](https://github.com/TripSage/TeamFormationAssistant/wiki)
 
-[Test Plan](https://github.com/TripSage/TeamFormationAssistant/wiki/Test-Plan)
+6. [Test Plan](https://github.com/TripSage/TeamFormationAssistant/wiki/Test-Plan)
 
 ## Video
 [<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
