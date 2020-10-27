@@ -13,3 +13,10 @@ six==1.15.0
 python-dotenv==0.14.0
 Flask==1.1.2
 flask_cors
+
+pytest
+pytest-pylint==0.16.1
+
+coveralls
+coverage
+codecov
