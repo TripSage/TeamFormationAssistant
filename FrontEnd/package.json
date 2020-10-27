@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "css-loader": "^4.3.0",
+    "react-test-renderer": "^17.0.1",
     "style-loader": "^2.0.0"
   }
 }
