@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import Signup from "./Signup";
-import { render } from '@testing-library/react';
-import { screen } from "@testing-library/react"
 import renderer from 'react-test-renderer';
 
 
