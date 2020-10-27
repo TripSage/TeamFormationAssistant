@@ -13,7 +13,7 @@ cors = CORS(app)
 
 @app.route('/executeAlgo')
 def execute_algo():
-    exec(open("algo.py").read())
+    exec(open("TeamAssigner.py").read())
     return {
         'msg': 'success',
     }
@@ -31,37 +31,18 @@ def get_member_data():
 @app.route('/Signup', methods=['GET', 'POST'])
 def signup():
     data = request.form
-    return connection.add_member(data)
+    if connection.add_member(data) == True:
+        return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success")
 
 
 @app.route('/ProjectDetails', methods=['GET', 'POST'])
 def projectDetails():
-    data = request.form
+    data = data
+    result = save_project_details(data)
+    if result == True:
+        return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success");
+
+def save_project_details(data):
     connection.create_project(data)
-    if connection.Connection.is_connected():
-        i = 0
-
-        for key in request.form.items():
-            colname = 'languagepreferred' + str(i)
-            if colname in request.form:
-                language_preferred = str(request.form[colname])
-                skill = str(request.form['skill' + str(i)])
-                member_role = str(request.form['memberrole' + str(i)])
-                available_hours_per_week = int(request.form['availablehoursperweek' + str(i)])
-                skill_weight = int(request.form['skillweight'])
-                experience_weight = int(request.form['experienceweight'])
-                hours_weight = int(request.form['hoursweight'])
-                language_weight = int(request.form['languageweight'])
-                budget_weight = int(request.form['budgetweight'])
-                cursor = connection.Connection.cursor()
-                sql = "CALL populateRequirements (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                cursor.execute(sql, (
-                    language_preferred, skill, member_role, available_hours_per_week, skill_weight, experience_weight,
-                    hours_weight, language_weight, budget_weight))
-                connection.Connection.commit()
-                i += 1
-
-            else:
-                break
-
-    return redirect("http://localhost:3000/TeamFormationAssistant/Signup/Success");
+    result = connection.save_project_requirements(data)
+    return result
