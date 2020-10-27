@@ -1,12 +1,6 @@
+# pylint: skip-file
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
-import numpy as np
-import scipy
-import matplotlib.pyplot as plt
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 import mysql.connector
-import sys
 
 
 connection = mysql.connector.connect(

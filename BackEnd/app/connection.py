@@ -1,3 +1,4 @@
+# pylint: skip-file
 import mysql.connector as conn
 
 # Connect to Local MYSQL database on Dev team Desktops. FOr production Environments connect to AWS

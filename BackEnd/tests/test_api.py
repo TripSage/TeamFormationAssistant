@@ -1,3 +1,4 @@
+# pylint: skip-file
 from __future__ import absolute_import
 
 import json
@@ -8,7 +9,6 @@ sys.path.append(".")
 from app.connection import connect
 from app import connection
 from app import app
-from flask import request, url_for
 
 TEST_DATA = {
     "name": "XYZ",

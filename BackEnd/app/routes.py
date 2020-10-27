@@ -1,3 +1,4 @@
+# pylint: skip-file
 # ToDo: Remove CORS Dependency
 # ToDo: Restructure ProjectDetails Function: High Complexity
 from __future__ import absolute_import
