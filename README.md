@@ -5,12 +5,25 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/TripSage/TeamFormationAssistant)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/TripSage/TeamFormationAssistant)
 # Team Formation Assistant
+
+## Table Of Contents
+[Video](#Video)
+
+[Why?](#Problem-Statement)
+
+[What?](#Project-Objectives)
+
+[Why?](#Project-Structure)
+
+[Documentation](https://github.com/TripSage/TeamFormationAssistant/wiki)
+
+[Test Plan](https://github.com/TripSage/TeamFormationAssistant/wiki/Test-Plan)
+
 ## Video
 [<img src = "https://github.com/TripSage/TeamFormationAssistant/blob/master/Assets/Video.png">](https://youtu.be/jtYDAEjDmlM)
 </br>
 </br>
 </br>
-
 ## Problem Statement              
 Build an assistant which will take the project requirements, team members
 availability, skill level, tools preferred, etc. as input and assigns the members for
@@ -25,20 +38,19 @@ data.<br/>
 members availability, skill level, tools preferred, etc. as input and assigns
 the members for the new team.<br/>
 
-## How we plan to carry out the project
+## Project Structure
 ### Algorithm Implementation
 We plan to code the application in Python3. Python ML libraries will be used for
 Cluster identification.<br/>
 ### Database Implementation:
-We plan to store team members into an MySQL database. Python files import the
+We plan to store team members into an MySQL with Fallback to AWS database. Python files import the
 data and process it and store the final result back to the database.<br/>
 ### Frontend Implementation:
 Team members will be able to submit a form to consider them as part of project
-assignment.
-Final team assignment will posted on the homepage dashboard. We plan to
+assignment. Final team assignment will posted on the homepage dashboard. We plan to
 implement the dashboard and form using HTML, CSS, JavaScript
 
-##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model, 
+##### We have created a wiki page containing project details including project workflow, setup, and Test Plan 
 ### [Wiki](https://github.com/TripSage/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
