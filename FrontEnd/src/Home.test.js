@@ -34,13 +34,6 @@ describe('Fetch Team Data', () => {
   });
 });
 
-describe("Text Check", () => {
-  it("Renders texts present correctly", () => {
-    const { getByText } = render();
-    expect(getByText(/Team Formation Assistant/i)).toBeInTheDocument();
-  });
-});
-
 
 describe('Test suits for Home DOM Tree check', () => {
 it('should match with snapshot', () => {

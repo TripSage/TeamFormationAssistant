@@ -23,13 +23,6 @@ div
   ReactDOM.unmountComponentAtNode(div);
 })
 
-describe("Text Check", () => {
-  it("Renders component correctly", () => {
-    render(<Signup/>);
-    screen.getByText(/Team Formation Assistant/i).toBeInTheDocument();
-  });
-});
-
 
 describe('Test suits for Home DOM Tree check', () => {
 it('should match with snapshot', () => {
