@@ -49,3 +49,12 @@ Refer [LICENSE](https://github.com/TripSage/TeamFormationAssistant/blob/master/L
 ### Documentation Styleguide
 
 * Use [Markdown](https://daringfireball.net/projects/markdown).
+
+### Troubleshoting 
+* Installation errors: <br/>
+Front End:<br/>
+`cd FrontEnd` <br/>
+delete node-modules <br/>
+`npm install` <br/>
+`npm start`
+<br/> <br/>
